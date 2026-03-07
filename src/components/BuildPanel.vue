@@ -1,47 +1,3 @@
-<template>
-    <div class="fixed left-3 bottom-3 z-[9999] flex flex-col-reverse items-start pointer-events-auto">
-        <!-- 分类按钮行（左下角） -->
-        <div class="flex flex-row gap-0.5 p-1.5 rounded-lg bg-gray-950/90 border border-gray-500/40 shadow-lg">
-            <button
-                v-for="(cat, i) in categories"
-                :key="cat.id"
-                type="button"
-                class="flex flex-col items-center justify-center gap-0.5 w-12 h-12 p-1 rounded-md border text-xs cursor-pointer transition-colors"
-                :class="openCategory === cat.id
-                    ? 'bg-blue-500/35 border-blue-400/70 text-blue-300'
-                    : 'bg-gray-800/90 border-gray-500/50 text-gray-400 hover:bg-gray-700/95 hover:border-gray-400/60 hover:text-gray-200'"
-                :title="`${cat.name} (${i + 1})`"
-                @click="toggleCategory(cat.id)"
-            >
-                <span class="text-lg leading-none">{{ cat.icon }}</span>
-                <span class="text-[10px] leading-none whitespace-nowrap">{{ cat.name }}</span>
-            </button>
-        </div>
-
-        <!-- 当前分类的建筑子菜单 -->
-        <Transition name="submenu">
-            <div v-if="openCategory" class="flex flex-col w-72 max-h-80 mb-1.5 rounded-lg overflow-hidden bg-gray-950/95 border border-gray-500/40 shadow-lg">
-                <div class="flex items-center justify-between px-3 py-2 bg-gray-700/80 text-sm text-gray-200">
-                    <span>{{ currentCategory?.name }}</span>
-                    <button type="button" class="w-6 h-6 p-0 bg-transparent border-none text-gray-400 text-lg leading-none cursor-pointer rounded hover:bg-gray-500/30 hover:text-white" @click="openCategory = null">×</button>
-                </div>
-                <div class="grid grid-cols-4 gap-1.5 p-2.5 overflow-y-auto">
-                    <button
-                        v-for="item in currentBuildings"
-                        :key="item.id"
-                        type="button"
-                        class="flex flex-col items-center justify-center gap-1 p-2 rounded-md border text-[11px] cursor-pointer transition-colors bg-gray-700/60 border-gray-500/40 text-gray-400 hover:bg-blue-500/20 hover:border-blue-400/50 hover:text-blue-300"
-                        @click="selectBuild(item)"
-                    >
-                        <span class="text-xl leading-none">{{ item.icon }}</span>
-                        <span class="leading-none text-center break-all">{{ item.name }}</span>
-                    </button>
-                </div>
-            </div>
-        </Transition>
-    </div>
-</template>
-
 <script setup lang="ts">
 import { computed, onMounted, onUnmounted, ref } from 'vue'
 
@@ -107,6 +63,50 @@ onUnmounted(() => {
     window.removeEventListener('keydown', onKeyDown)
 })
 </script>
+
+<template>
+    <div class="fixed left-3 bottom-3 z-[9999] flex flex-col-reverse items-start pointer-events-auto">
+        <!-- 分类按钮行（左下角） -->
+        <div class="flex flex-row gap-0.5 p-1.5 rounded-lg bg-gray-950/90 border border-gray-500/40 shadow-lg">
+            <button
+                v-for="(cat, i) in categories"
+                :key="cat.id"
+                type="button"
+                class="flex flex-col items-center justify-center gap-0.5 w-12 h-12 p-1 rounded-md border text-xs cursor-pointer transition-colors"
+                :class="openCategory === cat.id
+                    ? 'bg-blue-500/35 border-blue-400/70 text-blue-300'
+                    : 'bg-gray-800/90 border-gray-500/50 text-gray-400 hover:bg-gray-700/95 hover:border-gray-400/60 hover:text-gray-200'"
+                :title="`${cat.name} (${i + 1})`"
+                @click="toggleCategory(cat.id)"
+            >
+                <span class="text-lg leading-none">{{ cat.icon }}</span>
+                <span class="text-[10px] leading-none whitespace-nowrap">{{ cat.name }}</span>
+            </button>
+        </div>
+
+        <!-- 当前分类的建筑子菜单 -->
+        <Transition name="submenu">
+            <div v-if="openCategory" class="flex flex-col w-72 max-h-80 mb-1.5 rounded-lg overflow-hidden bg-gray-950/95 border border-gray-500/40 shadow-lg">
+                <div class="flex items-center justify-between px-3 py-2 bg-gray-700/80 text-sm text-gray-200">
+                    <span>{{ currentCategory?.name }}</span>
+                    <button type="button" class="w-6 h-6 p-0 bg-transparent border-none text-gray-400 text-lg leading-none cursor-pointer rounded hover:bg-gray-500/30 hover:text-white" @click="openCategory = null">×</button>
+                </div>
+                <div class="grid grid-cols-4 gap-1.5 p-2.5 overflow-y-auto">
+                    <button
+                        v-for="item in currentBuildings"
+                        :key="item.id"
+                        type="button"
+                        class="flex flex-col items-center justify-center gap-1 p-2 rounded-md border text-[11px] cursor-pointer transition-colors bg-gray-700/60 border-gray-500/40 text-gray-400 hover:bg-blue-500/20 hover:border-blue-400/50 hover:text-blue-300"
+                        @click="selectBuild(item)"
+                    >
+                        <span class="text-xl leading-none">{{ item.icon }}</span>
+                        <span class="leading-none text-center break-all">{{ item.name }}</span>
+                    </button>
+                </div>
+            </div>
+        </Transition>
+    </div>
+</template>
 
 <style scoped>
 .submenu-enter-active,

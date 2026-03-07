@@ -1,14 +1,3 @@
-<template>
-  <ion-page>
-    <ion-content :fullscreen="true" class="game-content">
-      <div ref="gameContainer" class="absolute inset-0 w-full h-full min-h-screen flex items-center justify-center">
-        <div ref="phaserMount" class="w-full h-full flex items-center justify-center game-canvas-wrapper" />
-      </div>
-      <BuildPanel />
-    </ion-content>
-  </ion-page>
-</template>
-
 <script setup lang="ts">
 import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import { IonContent, IonPage } from '@ionic/vue'
@@ -75,6 +64,17 @@ onUnmounted(() => {
   }
 })
 </script>
+
+<template>
+  <ion-page>
+    <ion-content :fullscreen="true" class="game-content">
+      <div ref="gameContainer" class="absolute inset-0 w-full h-full min-h-screen flex items-center justify-center">
+        <div ref="phaserMount" class="w-full h-full flex items-center justify-center game-canvas-wrapper" />
+      </div>
+      <BuildPanel />
+    </ion-content>
+  </ion-page>
+</template>
 
 <style scoped>
 .game-content {

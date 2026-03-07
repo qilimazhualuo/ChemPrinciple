@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue'
+</script>
+
 <template>
     <ion-page>
         <ion-header :translucent="true">
@@ -22,10 +26,6 @@
         </ion-content>
     </ion-page>
 </template>
-
-<script setup lang="ts">
-import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-</script>
 
 <style scoped>
 #container {
