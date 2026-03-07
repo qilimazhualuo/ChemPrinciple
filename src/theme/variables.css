@@ -1,2 +1,7 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+
+/* Tailwind：只引入 theme + utilities（mb-8、flex 等），不用 base/preflight，避免和 Ionic 冲突 */
+@layer theme, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
