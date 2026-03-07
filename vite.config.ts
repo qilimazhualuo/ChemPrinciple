@@ -8,18 +8,18 @@ import { defineConfig } from 'vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    tailwindcss(),
-    legacy()
-  ],
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, './src'),
+    plugins: [
+        vue(),
+        tailwindcss(),
+        legacy()
+    ],
+    resolve: {
+        alias: {
+            '@': path.resolve(__dirname, './src'),
+        },
     },
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom'
-  }
+    test: {
+        globals: true,
+        environment: 'jsdom'
+    }
 })
