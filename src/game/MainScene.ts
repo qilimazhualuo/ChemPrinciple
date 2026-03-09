@@ -3,6 +3,15 @@ import Phaser from 'phaser'
 const MOVE_SPEED = 200
 const JUMP_VELOCITY = -520
 const CLIMB_SPEED = 180
+const TILE_SIZE = 32
+
+interface BuildItem {
+    id: string
+    name: string
+    icon: string
+    width: number
+    height: number
+}
 
 /**
   * 主游戏场景
@@ -11,6 +20,9 @@ const CLIMB_SPEED = 180
 export default class MainScene extends Phaser.Scene {
     private player!: Phaser.Physics.Arcade.Sprite
     private climbables!: Phaser.Physics.Arcade.StaticGroup
+    private placedBuildings!: Phaser.GameObjects.Group
+    private placementItem: BuildItem | null = null
+    private previewRect: Phaser.GameObjects.Rectangle | null = null
     private keys!: {
         W: Phaser.Input.Keyboard.Key
         A: Phaser.Input.Keyboard.Key
@@ -61,6 +73,52 @@ export default class MainScene extends Phaser.Scene {
         this.climbables.add(ladder)
         this.physics.add.collider(this.player, this.climbables)
 
+        // 已放置建筑
+        this.placedBuildings = this.add.group()
+
+        // 放置模式：监听 Vue 传来的选中建筑
+        this.events.on('enterPlacement', (item: BuildItem | null) => {
+            this.placementItem = item
+            if (this.previewRect) {
+                this.previewRect.destroy()
+                this.previewRect = null
+            }
+            if (item) {
+                const w = item.width * TILE_SIZE
+                const h = item.height * TILE_SIZE
+                this.previewRect = this.add.rectangle(0, 0, w, h, 0x3182ce, 0.5)
+                    .setDepth(10)
+                    .setVisible(false)
+            }
+        })
+
+        // 点击放置
+        this.input.on('pointerdown', (ptr: Phaser.Input.Pointer) => {
+            if (!this.placementItem) return
+            const wx = ptr.worldX
+            const wy = ptr.worldY
+            const tw = this.placementItem.width
+            const th = this.placementItem.height
+            const gx = Math.floor(wx / TILE_SIZE) * TILE_SIZE + (tw * TILE_SIZE) / 2
+            const gy = Math.floor(wy / TILE_SIZE) * TILE_SIZE + (th * TILE_SIZE) / 2
+            this.placeBuilding(gx, gy, this.placementItem)
+            this.placementItem = null
+            this.events.emit('exitPlacement')
+            if (this.previewRect) {
+                this.previewRect.setVisible(false)
+            }
+        })
+
+        // ESC 取消放置
+        const esc = this.input.keyboard?.addKey(Phaser.Input.Keyboard.KeyCodes.ESC)
+        esc?.on?.('down', () => {
+            if (this.placementItem) {
+                this.placementItem = null
+                this.events.emit('exitPlacement')
+                if (this.previewRect) this.previewRect.setVisible(false)
+            }
+        })
+
         // WASD + 空格（keyboard 在触摸/iframe 等环境可能不可用）
         const kb = this.input.keyboard
         const noopKey = { isDown: false } as Phaser.Input.Keyboard.Key
@@ -88,7 +146,31 @@ export default class MainScene extends Phaser.Scene {
             .setDepth(1)
     }
 
+    private placeBuilding(worldX: number, worldY: number, item: BuildItem) {
+        const w = item.width * TILE_SIZE
+        const h = item.height * TILE_SIZE
+        const rect = this.add.rectangle(worldX, worldY, w, h, 0x4a5568)
+        rect.setStrokeStyle(2, 0x63b3ed)
+        const label = this.add.text(worldX, worldY, item.icon, {
+            fontSize: Math.min(18, Math.floor(TILE_SIZE * 0.8)),
+            color: '#e2e8f0',
+        }).setOrigin(0.5)
+        this.placedBuildings.add(rect)
+        this.placedBuildings.add(label)
+    }
+
     update() {
+        // 放置预览跟随鼠标
+        if (this.previewRect && this.placementItem) {
+            const wx = this.input.activePointer.worldX
+            const wy = this.input.activePointer.worldY
+            const tw = this.placementItem.width
+            const th = this.placementItem.height
+            const gx = Math.floor(wx / TILE_SIZE) * TILE_SIZE + (tw * TILE_SIZE) / 2
+            const gy = Math.floor(wy / TILE_SIZE) * TILE_SIZE + (th * TILE_SIZE) / 2
+            this.previewRect.setPosition(gx, gy).setVisible(true)
+        }
+
         if (!this.keys || !this.player?.body) return
         const body = this.player.body as Phaser.Physics.Arcade.Body
 

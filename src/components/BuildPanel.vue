@@ -1,31 +1,15 @@
+<script lang="ts">
+export default { name: 'BuildPanel' }
+</script>
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref } from 'vue'
+import { computed, inject, onMounted, onUnmounted, ref } from 'vue'
+import type { BuildItem } from '@/data/buildings'
+import { buildCategories } from '@/data/buildings'
 
-export interface BuildCategory {
-    id: string
-    name: string
-    icon: string
-    buildings: BuildItem[]
-}
+const setSelectedBuild = inject<(item: BuildItem | null) => void>('setSelectedBuild')
+const selectedBuild = inject<{ value: BuildItem | null }>('selectedBuild')
 
-export interface BuildItem {
-    id: string
-    name: string
-    icon: string
-}
-
-const categories: BuildCategory[] = [
-    { id: 'base', name: '基础', icon: '◉', buildings: [{ id: 'tile', name: '砖块', icon: '▣' }, { id: 'ladder', name: '梯子', icon: '⫸' }, { id: 'door', name: '门', icon: '⊞' }] },
-    { id: 'oxygen', name: '氧气', icon: '◎', buildings: [{ id: 'diffuser', name: '藻类制氧', icon: '◈' }, { id: 'electrolyzer', name: '电解器', icon: '◇' }] },
-    { id: 'power', name: '电力', icon: '⚡', buildings: [{ id: 'wire', name: '电线', icon: '─' }, { id: 'battery', name: '电池', icon: '▣' }, { id: 'generator', name: '发电机', icon: '◉' }] },
-    { id: 'food', name: '食物', icon: '☗', buildings: [{ id: 'planter', name: '种植盆', icon: '▤' }, { id: 'cooker', name: '烹饪站', icon: '⌂' }] },
-    { id: 'pipe', name: '管道', icon: '⊟', buildings: [{ id: 'pipe', name: '管道', icon: '─' }, { id: 'pump', name: '液泵', icon: '◎' }] },
-    { id: 'vent', name: '通风', icon: '⇄', buildings: [{ id: 'vent', name: '通风口', icon: '○' }, { id: 'filter', name: '过滤器', icon: '◇' }] },
-    { id: 'auto', name: '自动化', icon: '⚙', buildings: [{ id: 'wire', name: '自动化线', icon: '─' }, { id: 'sensor', name: '传感器', icon: '◐' }] },
-    { id: 'medical', name: '医疗', icon: '✚', buildings: [{ id: 'bed', name: '医疗床', icon: '▭' }, { id: 'apothecary', name: '药房', icon: '▣' }] },
-    { id: 'furniture', name: '家具', icon: '▦', buildings: [{ id: 'bed', name: '床', icon: '▭' }, { id: 'table', name: '桌', icon: '▤' }, { id: 'light', name: '灯', icon: '○' }] },
-    { id: 'decor', name: '装饰', icon: '✦', buildings: [{ id: 'painting', name: '画', icon: '▢' }, { id: 'plant', name: '植物', icon: '♣' }] },
-]
+const categories = buildCategories
 
 const openCategory = ref<string | null>(null)
 
@@ -36,14 +20,22 @@ function toggleCategory(id: string) {
     openCategory.value = openCategory.value === id ? null : id
 }
 
+function getCategoryKey(i: number) {
+    return i < 9 ? String(i + 1) : ''
+}
+
 function selectBuild(item: BuildItem) {
-    console.log('Select build:', item)
-    // TODO: 进入放置模式
+    // 再次点击同一建筑则取消选择
+    if (selectedBuild?.value?.id === item.id) {
+        setSelectedBuild?.(null)
+    } else {
+        setSelectedBuild?.(item)
+    }
 }
 
 const keyToIndex: Record<string, number> = {
     '1': 0, '2': 1, '3': 2, '4': 3, '5': 4,
-    '6': 5, '7': 6, '8': 7, '9': 8, '0': 9,
+    '6': 5, '7': 6, '8': 7, '9': 8,
 }
 
 function onKeyDown(e: KeyboardEvent) {
@@ -76,7 +68,7 @@ onUnmounted(() => {
                 :class="openCategory === cat.id
                     ? 'bg-blue-500/35 border-blue-400/70 text-blue-300'
                     : 'bg-gray-800/90 border-gray-500/50 text-gray-400 hover:bg-gray-700/95 hover:border-gray-400/60 hover:text-gray-200'"
-                :title="`${cat.name} (${i + 1})`"
+                :title="getCategoryKey(i) ? `${cat.name} (${getCategoryKey(i)})` : cat.name"
                 @click="toggleCategory(cat.id)"
             >
                 <span class="text-lg leading-none">{{ cat.icon }}</span>
@@ -96,10 +88,22 @@ onUnmounted(() => {
                         v-for="item in currentBuildings"
                         :key="item.id"
                         type="button"
-                        class="flex flex-col items-center justify-center gap-1 p-2 rounded-md border text-[11px] cursor-pointer transition-colors bg-gray-700/60 border-gray-500/40 text-gray-400 hover:bg-blue-500/20 hover:border-blue-400/50 hover:text-blue-300"
+                        class="flex flex-col items-center justify-center gap-1 p-2 rounded-md border text-[11px] cursor-pointer transition-colors"
+                        :class="selectedBuild?.value?.id === item.id
+                            ? 'bg-blue-500/40 border-blue-400 text-blue-200'
+                            : 'bg-gray-700/60 border-gray-500/40 text-gray-400 hover:bg-blue-500/20 hover:border-blue-400/50 hover:text-blue-300'"
                         @click="selectBuild(item)"
                     >
-                        <span class="text-xl leading-none">{{ item.icon }}</span>
+                        <div class="relative w-8 h-8 flex items-center justify-center">
+                            <img
+                                v-if="item.image"
+                                :src="`/assets/buildings/${item.image}`"
+                                :alt="item.name"
+                                class="w-full h-full object-contain"
+                                @error="(e) => { (e.target as HTMLImageElement).style.display = 'none'; (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden') }"
+                            >
+                            <span class="text-xl leading-none" :class="item.image ? 'hidden absolute' : ''">{{ item.icon }}</span>
+                        </div>
                         <span class="leading-none text-center break-all">{{ item.name }}</span>
                     </button>
                 </div>

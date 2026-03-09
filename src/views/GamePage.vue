@@ -1,13 +1,27 @@
 <script setup lang="ts">
-import { nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { nextTick, onMounted, onUnmounted, provide, ref } from 'vue'
 import { IonContent, IonPage } from '@ionic/vue'
 import type Phaser from 'phaser'
+import type { BuildItem } from '@/data/buildings'
 import BuildPanel from '@/components/BuildPanel.vue'
+import TechPanel from '@/components/TechPanel.vue'
 import { createGame } from '@/game'
 
 const gameContainer = ref<HTMLElement | null>(null)
 const phaserMount = ref<HTMLElement | null>(null)
+const selectedBuild = ref<BuildItem | null>(null)
 let game: Phaser.Game | null = null
+
+function setSelectedBuild(item: BuildItem | null) {
+    selectedBuild.value = item
+    const scene = game?.scene?.getScene?.('MainScene')
+    if (scene) {
+        scene.events.emit('enterPlacement', item)
+    }
+}
+
+provide('selectedBuild', selectedBuild)
+provide('setSelectedBuild', setSelectedBuild)
 let resizeObserver: ResizeObserver | null = null
 let mounted = false
 let observedEl: HTMLElement | null = null
@@ -21,6 +35,10 @@ onMounted(async () => {
   mounted = true
   observedEl = mount
   game = createGame(mount)
+  const scene = game.scene.getScene('MainScene')
+  scene.events.on('exitPlacement', () => {
+    selectedBuild.value = null
+  })
   // 容器尺寸变化时重设 Phaser 画布
   resizeObserver = new ResizeObserver(() => {
     if (!mounted || !game || !observedEl) return
@@ -72,6 +90,7 @@ onUnmounted(() => {
         <div ref="phaserMount" class="w-full h-full flex items-center justify-center game-canvas-wrapper" />
       </div>
       <BuildPanel />
+      <TechPanel />
     </ion-content>
   </ion-page>
 </template>

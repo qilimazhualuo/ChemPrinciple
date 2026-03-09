@@ -5,8 +5,9 @@
     "type": "module",
     "packageManager": "pnpm@10.30.3",
     "scripts": {
-        "dev": "vite",
+        "dev": "vite --open",
         "build": "vue-tsc && vite build",
+        "download-buildings": "node scripts/download-building-images.mjs",
         "preview": "vite preview",
         "test:e2e": "cypress run",
         "test:unit": "vitest",
