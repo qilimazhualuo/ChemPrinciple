@@ -1,0 +1,13 @@
+import type { BuildItem } from '../../types'
+import image from './peat_generator.png'
+
+const peat_generator: BuildItem = {
+    id: 'peat_generator',
+    name: 'peat_generator',
+    icon: '▣',
+    image: image,
+    width: 1,
+    height: 1,
+}
+
+export default peat_generator

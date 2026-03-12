@@ -98,7 +98,7 @@ onUnmounted(() => {
                         <div class="relative w-8 h-8 flex items-center justify-center">
                             <img
                                 v-if="item.image"
-                                :src="`/assets/buildings/${item.image}`"
+                                :src="item.image"
                                 :alt="item.name"
                                 class="w-full h-full object-contain"
                                 @error="(e) => { (e.target as HTMLImageElement).style.display = 'none'; (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden') }"

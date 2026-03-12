@@ -1,0 +1,12 @@
+import type { BuildItem } from '../../types'
+
+const conveyor_rail: BuildItem = {
+    id: 'conveyor_rail',
+    name: 'conveyor_rail',
+    icon: '▣',
+    image: '',
+    width: 1,
+    height: 1,
+}
+
+export default conveyor_rail

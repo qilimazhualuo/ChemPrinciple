@@ -1,0 +1,13 @@
+import type { BuildItem } from '../../types'
+import image from './sculpture_wide.png'
+
+const sculpture_wide: BuildItem = {
+    id: 'sculpture_wide',
+    name: 'sculpture_wide',
+    icon: '▣',
+    image: image,
+    width: 1,
+    height: 1,
+}
+
+export default sculpture_wide

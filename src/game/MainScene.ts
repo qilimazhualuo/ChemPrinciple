@@ -9,6 +9,7 @@ interface BuildItem {
     id: string
     name: string
     icon: string
+    image: string
     width: number
     height: number
 }
@@ -23,6 +24,7 @@ export default class MainScene extends Phaser.Scene {
     private placedBuildings!: Phaser.GameObjects.Group
     private placementItem: BuildItem | null = null
     private previewRect: Phaser.GameObjects.Rectangle | null = null
+    private previewImage: Phaser.GameObjects.Image | null = null
     private keys!: {
         W: Phaser.Input.Keyboard.Key
         A: Phaser.Input.Keyboard.Key
@@ -83,12 +85,27 @@ export default class MainScene extends Phaser.Scene {
                 this.previewRect.destroy()
                 this.previewRect = null
             }
+            if (this.previewImage) {
+                this.previewImage.destroy()
+                this.previewImage = null
+            }
             if (item) {
                 const w = item.width * TILE_SIZE
                 const h = item.height * TILE_SIZE
-                this.previewRect = this.add.rectangle(0, 0, w, h, 0x3182ce, 0.5)
+                this.previewRect = this.add.rectangle(0, 0, w, h, 0x3182ce, 0.3)
                     .setDepth(10)
                     .setVisible(false)
+
+                if (item.image) {
+                    this.loadBuildingTexture(item, () => {
+                        if (this.placementItem?.id !== item.id) return
+                        this.previewImage = this.add.image(0, 0, `building_${item.id}`)
+                            .setDisplaySize(w, h)
+                            .setAlpha(0.6)
+                            .setDepth(11)
+                            .setVisible(false)
+                    })
+                }
             }
         })
 
@@ -104,9 +121,8 @@ export default class MainScene extends Phaser.Scene {
             this.placeBuilding(gx, gy, this.placementItem)
             this.placementItem = null
             this.events.emit('exitPlacement')
-            if (this.previewRect) {
-                this.previewRect.setVisible(false)
-            }
+            if (this.previewRect) this.previewRect.setVisible(false)
+            if (this.previewImage) this.previewImage.setVisible(false)
         })
 
         // ESC 取消放置
@@ -116,6 +132,7 @@ export default class MainScene extends Phaser.Scene {
                 this.placementItem = null
                 this.events.emit('exitPlacement')
                 if (this.previewRect) this.previewRect.setVisible(false)
+                if (this.previewImage) this.previewImage.setVisible(false)
             }
         })
 
@@ -146,17 +163,42 @@ export default class MainScene extends Phaser.Scene {
             .setDepth(1)
     }
 
+    private loadBuildingTexture(item: BuildItem, onComplete?: () => void) {
+        const key = `building_${item.id}`
+        if (this.textures.exists(key)) {
+            onComplete?.()
+            return
+        }
+        if (!item.image) {
+            onComplete?.()
+            return
+        }
+        this.load.image(key, item.image)
+        if (onComplete) {
+            this.load.once('complete', onComplete)
+        }
+        this.load.start()
+    }
+
     private placeBuilding(worldX: number, worldY: number, item: BuildItem) {
         const w = item.width * TILE_SIZE
         const h = item.height * TILE_SIZE
-        const rect = this.add.rectangle(worldX, worldY, w, h, 0x4a5568)
-        rect.setStrokeStyle(2, 0x63b3ed)
-        const label = this.add.text(worldX, worldY, item.icon, {
-            fontSize: Math.min(18, Math.floor(TILE_SIZE * 0.8)),
-            color: '#e2e8f0',
-        }).setOrigin(0.5)
-        this.placedBuildings.add(rect)
-        this.placedBuildings.add(label)
+        const textureKey = `building_${item.id}`
+
+        if (this.textures.exists(textureKey)) {
+            const img = this.add.image(worldX, worldY, textureKey)
+                .setDisplaySize(w, h)
+            this.placedBuildings.add(img)
+        } else {
+            const rect = this.add.rectangle(worldX, worldY, w, h, 0x4a5568)
+            rect.setStrokeStyle(2, 0x63b3ed)
+            const label = this.add.text(worldX, worldY, item.icon, {
+                fontSize: Math.min(18, Math.floor(TILE_SIZE * 0.8)),
+                color: '#e2e8f0',
+            }).setOrigin(0.5)
+            this.placedBuildings.add(rect)
+            this.placedBuildings.add(label)
+        }
     }
 
     update() {
@@ -169,6 +211,9 @@ export default class MainScene extends Phaser.Scene {
             const gx = Math.floor(wx / TILE_SIZE) * TILE_SIZE + (tw * TILE_SIZE) / 2
             const gy = Math.floor(wy / TILE_SIZE) * TILE_SIZE + (th * TILE_SIZE) / 2
             this.previewRect.setPosition(gx, gy).setVisible(true)
+            if (this.previewImage) {
+                this.previewImage.setPosition(gx, gy).setVisible(true)
+            }
         }
 
         if (!this.keys || !this.player?.body) return
