@@ -7,7 +7,8 @@ const transit_tube_entrance: BuildItem = {
     icon: '▣',
     image: image,
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'road',
 }
 
 export default transit_tube_entrance

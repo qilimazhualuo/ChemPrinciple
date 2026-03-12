@@ -6,8 +6,9 @@ const minipod: BuildItem = {
     name: 'minipod',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 4,
+    layer: 'building',
 }
 
 export default minipod

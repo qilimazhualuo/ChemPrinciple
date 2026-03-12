@@ -6,8 +6,9 @@ const super_computer: BuildItem = {
     name: 'super_computer',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 3,
+    layer: 'building',
 }
 
 export default super_computer

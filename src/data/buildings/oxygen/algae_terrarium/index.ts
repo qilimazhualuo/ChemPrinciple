@@ -6,7 +6,8 @@ const algae_terrarium: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default algae_terrarium

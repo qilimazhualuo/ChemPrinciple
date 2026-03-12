@@ -5,8 +5,9 @@ const logic_selector: BuildItem = {
     name: 'logic_selector',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'automation',
 }
 
 export default logic_selector

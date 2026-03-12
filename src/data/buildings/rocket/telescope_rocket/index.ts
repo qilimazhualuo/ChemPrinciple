@@ -6,8 +6,9 @@ const telescope_rocket: BuildItem = {
     name: 'telescope_rocket',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 4,
+    layer: 'building',
 }
 
 export default telescope_rocket

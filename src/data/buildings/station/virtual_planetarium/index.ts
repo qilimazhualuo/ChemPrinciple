@@ -5,8 +5,9 @@ const virtual_planetarium: BuildItem = {
     name: 'virtual_planetarium',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 4,
+    layer: 'building',
 }
 
 export default virtual_planetarium

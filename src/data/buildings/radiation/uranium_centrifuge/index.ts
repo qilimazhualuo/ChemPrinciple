@@ -5,8 +5,9 @@ const uranium_centrifuge: BuildItem = {
     name: 'uranium_centrifuge',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 4,
+    layer: 'building',
 }
 
 export default uranium_centrifuge

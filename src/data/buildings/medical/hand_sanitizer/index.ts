@@ -5,8 +5,9 @@ const hand_sanitizer: BuildItem = {
     name: 'hand_sanitizer',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default hand_sanitizer

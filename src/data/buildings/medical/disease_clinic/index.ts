@@ -6,8 +6,9 @@ const disease_clinic: BuildItem = {
     name: 'disease_clinic',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default disease_clinic

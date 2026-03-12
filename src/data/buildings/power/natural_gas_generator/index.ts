@@ -5,8 +5,9 @@ const natural_gas_generator: BuildItem = {
     name: 'natural_gas_generator',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 3,
+    layer: 'building',
 }
 
 export default natural_gas_generator

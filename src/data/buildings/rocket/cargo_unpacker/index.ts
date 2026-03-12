@@ -6,8 +6,9 @@ const cargo_unpacker: BuildItem = {
     name: 'cargo_unpacker',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default cargo_unpacker

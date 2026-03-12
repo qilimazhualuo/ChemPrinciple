@@ -8,6 +8,7 @@ const gas_valve: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'gas_pipe',
 }
 
 export default gas_valve

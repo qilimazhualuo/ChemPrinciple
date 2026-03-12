@@ -8,6 +8,7 @@ const insulated_liquid_conduit: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'liquid_pipe',
 }
 
 export default insulated_liquid_conduit

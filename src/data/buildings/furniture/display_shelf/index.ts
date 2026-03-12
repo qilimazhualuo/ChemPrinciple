@@ -6,7 +6,8 @@ const display_shelf: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default display_shelf

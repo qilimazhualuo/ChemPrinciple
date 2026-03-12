@@ -7,6 +7,7 @@ const logic_and: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default logic_and

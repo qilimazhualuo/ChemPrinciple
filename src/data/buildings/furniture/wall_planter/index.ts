@@ -8,6 +8,7 @@ const wall_planter: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default wall_planter

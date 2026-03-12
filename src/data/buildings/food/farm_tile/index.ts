@@ -7,6 +7,7 @@ const farm_tile: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'tile',
 }
 
 export default farm_tile

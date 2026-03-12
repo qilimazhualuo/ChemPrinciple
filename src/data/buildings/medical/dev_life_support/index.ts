@@ -6,8 +6,9 @@ const dev_life_support: BuildItem = {
     name: 'dev_life_support',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default dev_life_support

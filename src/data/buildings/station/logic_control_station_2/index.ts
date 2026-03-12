@@ -6,8 +6,9 @@ const logic_control_station_2: BuildItem = {
     name: 'logic_control_station_2',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 4,
+    layer: 'building',
 }
 
 export default logic_control_station_2

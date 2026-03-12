@@ -7,6 +7,7 @@ const conveyor_meter: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default conveyor_meter

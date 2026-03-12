@@ -6,7 +6,8 @@ const suit_marker: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 3,
+    layer: 'building',
 }
 
 export default suit_marker

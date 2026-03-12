@@ -5,8 +5,9 @@ const crafting_station: BuildItem = {
     name: 'crafting_station',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default crafting_station

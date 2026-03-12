@@ -6,8 +6,9 @@ const manual_radbolt_generator: BuildItem = {
     name: 'manual_radbolt_generator',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default manual_radbolt_generator

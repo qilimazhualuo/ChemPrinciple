@@ -7,6 +7,7 @@ const gas_element_sensor: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default gas_element_sensor

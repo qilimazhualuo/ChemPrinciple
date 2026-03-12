@@ -8,6 +8,7 @@ const fire_pole: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'road',
 }
 
 export default fire_pole

@@ -5,8 +5,9 @@ const egg_cracker: BuildItem = {
     name: 'egg_cracker',
     icon: '▣',
     image: '',
-    width: 1,
+    width: 2,
     height: 1,
+    layer: 'building',
 }
 
 export default egg_cracker

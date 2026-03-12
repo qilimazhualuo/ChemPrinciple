@@ -7,6 +7,7 @@ const conveyor_load_attachment: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default conveyor_load_attachment

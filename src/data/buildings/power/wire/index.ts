@@ -7,6 +7,7 @@ const wire: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'wire',
 }
 
 export default wire

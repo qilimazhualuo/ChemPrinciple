@@ -7,6 +7,7 @@ const dev_light: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default dev_light

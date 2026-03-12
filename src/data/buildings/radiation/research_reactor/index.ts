@@ -6,8 +6,9 @@ const research_reactor: BuildItem = {
     name: 'research_reactor',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 6,
+    layer: 'building',
 }
 
 export default research_reactor

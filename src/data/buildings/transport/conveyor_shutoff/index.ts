@@ -8,6 +8,7 @@ const conveyor_shutoff: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default conveyor_shutoff

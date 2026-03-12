@@ -5,8 +5,9 @@ const pixel_pack: BuildItem = {
     name: 'pixel_pack',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'background',
 }
 
 export default pixel_pack

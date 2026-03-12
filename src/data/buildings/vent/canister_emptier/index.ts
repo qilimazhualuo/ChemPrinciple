@@ -6,7 +6,8 @@ const canister_emptier: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 3,
+    layer: 'building',
 }
 
 export default canister_emptier

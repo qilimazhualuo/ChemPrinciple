@@ -6,8 +6,9 @@ const dev_radbolt_projector: BuildItem = {
     name: 'dev_radbolt_projector',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default dev_radbolt_projector

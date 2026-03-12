@@ -8,6 +8,7 @@ const ceiling_light: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default ceiling_light

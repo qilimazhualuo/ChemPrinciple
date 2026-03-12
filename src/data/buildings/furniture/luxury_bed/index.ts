@@ -6,8 +6,9 @@ const luxury_bed: BuildItem = {
     name: 'luxury_bed',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 2,
+    layer: 'building',
 }
 
 export default luxury_bed

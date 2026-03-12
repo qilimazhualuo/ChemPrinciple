@@ -7,6 +7,7 @@ const toggler: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default toggler

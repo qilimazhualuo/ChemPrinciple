@@ -5,8 +5,9 @@ const grooming_station: BuildItem = {
     name: 'grooming_station',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default grooming_station

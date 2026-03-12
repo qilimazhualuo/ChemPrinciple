@@ -6,8 +6,9 @@ const mess_table: BuildItem = {
     name: 'mess_table',
     icon: '▣',
     image: image,
-    width: 1,
+    width: 2,
     height: 1,
+    layer: 'building',
 }
 
 export default mess_table

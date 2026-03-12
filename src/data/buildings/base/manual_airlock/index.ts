@@ -7,7 +7,8 @@ const manual_airlock: BuildItem = {
     icon: '▣',
     image: image,
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default manual_airlock

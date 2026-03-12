@@ -6,7 +6,8 @@ const radbolt_lamp: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default radbolt_lamp

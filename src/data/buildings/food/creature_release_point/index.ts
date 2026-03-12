@@ -7,6 +7,7 @@ const creature_release_point: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default creature_release_point

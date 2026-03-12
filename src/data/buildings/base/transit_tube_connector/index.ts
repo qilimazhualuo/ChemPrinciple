@@ -8,6 +8,7 @@ const transit_tube_connector: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'road',
 }
 
 export default transit_tube_connector

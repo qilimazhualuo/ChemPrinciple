@@ -6,8 +6,9 @@ const cold_fan: BuildItem = {
     name: 'cold_fan',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default cold_fan

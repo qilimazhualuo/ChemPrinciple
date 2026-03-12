@@ -5,8 +5,9 @@ const grinder: BuildItem = {
     name: 'grinder',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default grinder

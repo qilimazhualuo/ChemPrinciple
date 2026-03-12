@@ -5,8 +5,9 @@ const space_scanner: BuildItem = {
     name: 'space_scanner',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 6,
+    layer: 'building',
 }
 
 export default space_scanner

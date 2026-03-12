@@ -5,8 +5,9 @@ const launch_pad: BuildItem = {
     name: 'launch_pad',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 7,
+    height: 2,
+    layer: 'building',
 }
 
 export default launch_pad

@@ -5,8 +5,9 @@ const smoke_room: BuildItem = {
     name: 'smoke_room',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default smoke_room

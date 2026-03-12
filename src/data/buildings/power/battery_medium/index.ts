@@ -6,8 +6,9 @@ const battery_medium: BuildItem = {
     name: 'battery_medium',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default battery_medium

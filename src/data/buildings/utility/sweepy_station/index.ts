@@ -6,8 +6,9 @@ const sweepy_station: BuildItem = {
     name: 'sweepy_station',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default sweepy_station

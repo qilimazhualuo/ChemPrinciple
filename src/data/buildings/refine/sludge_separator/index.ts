@@ -6,8 +6,9 @@ const sludge_separator: BuildItem = {
     name: 'sludge_separator',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 3,
+    layer: 'building',
 }
 
 export default sludge_separator

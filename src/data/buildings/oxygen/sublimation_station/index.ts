@@ -6,7 +6,8 @@ const sublimation_station: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default sublimation_station

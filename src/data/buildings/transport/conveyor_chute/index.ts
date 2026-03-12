@@ -8,6 +8,7 @@ const conveyor_chute: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default conveyor_chute

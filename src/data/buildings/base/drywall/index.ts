@@ -8,6 +8,7 @@ const drywall: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default drywall

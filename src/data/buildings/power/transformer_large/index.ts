@@ -5,8 +5,9 @@ const transformer_large: BuildItem = {
     name: 'transformer_large',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default transformer_large

@@ -6,8 +6,9 @@ const creature_apartment: BuildItem = {
     name: 'creature_apartment',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default creature_apartment

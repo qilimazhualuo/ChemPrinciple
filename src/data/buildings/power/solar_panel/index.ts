@@ -6,8 +6,9 @@ const solar_panel: BuildItem = {
     name: 'solar_panel',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 7,
+    height: 3,
+    layer: 'building',
 }
 
 export default solar_panel

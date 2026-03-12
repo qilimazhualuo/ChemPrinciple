@@ -5,8 +5,9 @@ const beach_chair: BuildItem = {
     name: 'beach_chair',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default beach_chair

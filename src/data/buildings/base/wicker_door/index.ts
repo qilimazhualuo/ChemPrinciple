@@ -7,7 +7,8 @@ const wicker_door: BuildItem = {
     icon: '▣',
     image: image,
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default wicker_door

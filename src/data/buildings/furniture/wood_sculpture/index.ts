@@ -7,7 +7,8 @@ const wood_sculpture: BuildItem = {
     icon: '▣',
     image: image,
     width: 1,
-    height: 1,
+    height: 3,
+    layer: 'building',
 }
 
 export default wood_sculpture

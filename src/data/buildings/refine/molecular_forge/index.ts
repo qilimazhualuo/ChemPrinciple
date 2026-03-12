@@ -6,8 +6,9 @@ const molecular_forge: BuildItem = {
     name: 'molecular_forge',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 5,
+    layer: 'building',
 }
 
 export default molecular_forge

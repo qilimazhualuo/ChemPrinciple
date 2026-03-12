@@ -6,8 +6,9 @@ const gas_filter: BuildItem = {
     name: 'gas_filter',
     icon: '▣',
     image: image,
-    width: 1,
+    width: 3,
     height: 1,
+    layer: 'gas_pipe',
 }
 
 export default gas_filter

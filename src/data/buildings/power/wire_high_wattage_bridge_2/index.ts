@@ -7,6 +7,7 @@ const wire_high_wattage_bridge_2: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'wire',
 }
 
 export default wire_high_wattage_bridge_2

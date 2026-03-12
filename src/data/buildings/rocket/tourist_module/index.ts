@@ -5,8 +5,9 @@ const tourist_module: BuildItem = {
     name: 'tourist_module',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 4,
+    layer: 'building',
 }
 
 export default tourist_module

@@ -5,8 +5,9 @@ const diamond_press: BuildItem = {
     name: 'diamond_press',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 4,
+    layer: 'building',
 }
 
 export default diamond_press

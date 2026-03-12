@@ -5,8 +5,9 @@ const ladder_bed: BuildItem = {
     name: 'ladder_bed',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default ladder_bed

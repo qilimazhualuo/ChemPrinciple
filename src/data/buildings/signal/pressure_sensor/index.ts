@@ -7,6 +7,7 @@ const pressure_sensor: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default pressure_sensor

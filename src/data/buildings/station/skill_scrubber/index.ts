@@ -6,8 +6,9 @@ const skill_scrubber: BuildItem = {
     name: 'skill_scrubber',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default skill_scrubber

@@ -8,6 +8,7 @@ const logic_buffer: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default logic_buffer

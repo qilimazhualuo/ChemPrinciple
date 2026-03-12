@@ -6,7 +6,8 @@ const conveyor_receptacle: BuildItem = {
     icon: '▣',
     image: '',
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'building',
 }
 
 export default conveyor_receptacle

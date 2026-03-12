@@ -6,8 +6,9 @@ const fashion_station: BuildItem = {
     name: 'fashion_station',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 4,
+    layer: 'building',
 }
 
 export default fashion_station

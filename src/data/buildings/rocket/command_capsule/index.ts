@@ -5,8 +5,9 @@ const command_capsule: BuildItem = {
     name: 'command_capsule',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 5,
+    layer: 'building',
 }
 
 export default command_capsule

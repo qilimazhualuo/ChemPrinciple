@@ -7,6 +7,7 @@ const liquid_vent: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'liquid_pipe',
 }
 
 export default liquid_vent

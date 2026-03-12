@@ -7,7 +7,8 @@ const logic_counter: BuildItem = {
     icon: '▣',
     image: image,
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'automation',
 }
 
 export default logic_counter

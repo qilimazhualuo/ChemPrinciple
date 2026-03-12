@@ -6,8 +6,9 @@ const metal_refinery: BuildItem = {
     name: 'metal_refinery',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 4,
+    layer: 'building',
 }
 
 export default metal_refinery

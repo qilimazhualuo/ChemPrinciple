@@ -6,8 +6,9 @@ const water_cooler_2: BuildItem = {
     name: 'water_cooler_2',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default water_cooler_2

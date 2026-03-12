@@ -6,8 +6,9 @@ const desalinator: BuildItem = {
     name: 'desalinator',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 3,
+    layer: 'building',
 }
 
 export default desalinator

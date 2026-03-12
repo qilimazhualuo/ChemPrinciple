@@ -6,8 +6,9 @@ const robot_control_station: BuildItem = {
     name: 'robot_control_station',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 3,
+    layer: 'building',
 }
 
 export default robot_control_station

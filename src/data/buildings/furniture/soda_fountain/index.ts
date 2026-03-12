@@ -6,8 +6,9 @@ const soda_fountain: BuildItem = {
     name: 'soda_fountain',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default soda_fountain

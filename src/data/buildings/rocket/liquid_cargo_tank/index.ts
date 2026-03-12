@@ -6,8 +6,9 @@ const liquid_cargo_tank: BuildItem = {
     name: 'liquid_cargo_tank',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 2,
+    layer: 'building',
 }
 
 export default liquid_cargo_tank

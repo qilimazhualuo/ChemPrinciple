@@ -7,6 +7,7 @@ const disconnect_high: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'wire',
 }
 
 export default disconnect_high

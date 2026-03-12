@@ -6,8 +6,9 @@ const orbital_data_collection: BuildItem = {
     name: 'orbital_data_collection',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 4,
+    layer: 'building',
 }
 
 export default orbital_data_collection

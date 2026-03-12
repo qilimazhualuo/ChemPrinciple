@@ -6,8 +6,9 @@ const ethanol_distillery: BuildItem = {
     name: 'ethanol_distillery',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 3,
+    layer: 'building',
 }
 
 export default ethanol_distillery

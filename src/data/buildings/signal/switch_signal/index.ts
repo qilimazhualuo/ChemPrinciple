@@ -7,6 +7,7 @@ const switch_signal: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default switch_signal

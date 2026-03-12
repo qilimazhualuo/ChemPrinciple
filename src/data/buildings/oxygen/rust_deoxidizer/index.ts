@@ -6,8 +6,9 @@ const rust_deoxidizer: BuildItem = {
     name: 'rust_deoxidizer',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 2,
+    layer: 'building',
 }
 
 export default rust_deoxidizer

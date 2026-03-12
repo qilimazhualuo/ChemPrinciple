@@ -8,6 +8,7 @@ const wire_refined_bridge: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'wire',
 }
 
 export default wire_refined_bridge

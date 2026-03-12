@@ -7,6 +7,7 @@ const conveyor_bridge: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default conveyor_bridge

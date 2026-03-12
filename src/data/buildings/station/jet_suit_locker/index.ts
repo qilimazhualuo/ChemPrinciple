@@ -5,8 +5,9 @@ const jet_suit_locker: BuildItem = {
     name: 'jet_suit_locker',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 4,
+    layer: 'building',
 }
 
 export default jet_suit_locker

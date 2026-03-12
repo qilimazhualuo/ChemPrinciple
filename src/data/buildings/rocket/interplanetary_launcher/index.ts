@@ -6,8 +6,9 @@ const interplanetary_launcher: BuildItem = {
     name: 'interplanetary_launcher',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 6,
+    layer: 'building',
 }
 
 export default interplanetary_launcher

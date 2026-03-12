@@ -7,6 +7,7 @@ const wire_set_writer: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default wire_set_writer

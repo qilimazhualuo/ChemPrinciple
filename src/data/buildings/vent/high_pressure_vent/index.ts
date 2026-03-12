@@ -7,6 +7,7 @@ const high_pressure_vent: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'gas_pipe',
 }
 
 export default high_pressure_vent

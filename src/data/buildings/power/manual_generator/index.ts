@@ -6,8 +6,9 @@ const manual_generator: BuildItem = {
     name: 'manual_generator',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 2,
+    layer: 'building',
 }
 
 export default manual_generator

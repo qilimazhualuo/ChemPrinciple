@@ -7,6 +7,7 @@ const thermo_sensor: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default thermo_sensor

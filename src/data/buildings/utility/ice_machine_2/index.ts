@@ -5,8 +5,9 @@ const ice_machine_2: BuildItem = {
     name: 'ice_machine_2',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default ice_machine_2

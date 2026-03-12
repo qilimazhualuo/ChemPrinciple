@@ -7,6 +7,7 @@ const gas_input_attachment: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default gas_input_attachment

@@ -7,6 +7,7 @@ const creature_delivery_point: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default creature_delivery_point

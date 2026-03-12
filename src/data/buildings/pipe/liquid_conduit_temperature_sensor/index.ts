@@ -7,6 +7,7 @@ const liquid_conduit_temperature_sensor: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'liquid_pipe',
 }
 
 export default liquid_conduit_temperature_sensor

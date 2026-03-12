@@ -8,6 +8,7 @@ const planter_box: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default planter_box

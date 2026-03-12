@@ -7,6 +7,7 @@ const liquid_element_sensor: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default liquid_element_sensor

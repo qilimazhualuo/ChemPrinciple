@@ -8,6 +8,7 @@ const window_tile: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'tile',
 }
 
 export default window_tile

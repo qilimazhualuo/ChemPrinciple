@@ -6,8 +6,9 @@ const rocket_port_liquid_unloader: BuildItem = {
     name: 'rocket_port_liquid_unloader',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 3,
+    layer: 'building',
 }
 
 export default rocket_port_liquid_unloader

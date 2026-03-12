@@ -5,8 +5,9 @@ const wood_gas_generator: BuildItem = {
     name: 'wood_gas_generator',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default wood_gas_generator

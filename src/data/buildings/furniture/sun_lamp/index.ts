@@ -6,8 +6,9 @@ const sun_lamp: BuildItem = {
     name: 'sun_lamp',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 4,
+    layer: 'building',
 }
 
 export default sun_lamp

@@ -8,6 +8,7 @@ const aero_pot: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default aero_pot

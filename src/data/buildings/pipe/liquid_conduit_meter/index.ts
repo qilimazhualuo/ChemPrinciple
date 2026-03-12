@@ -8,6 +8,7 @@ const liquid_conduit_meter: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'liquid_pipe',
 }
 
 export default liquid_conduit_meter

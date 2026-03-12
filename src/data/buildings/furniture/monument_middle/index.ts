@@ -6,8 +6,9 @@ const monument_middle: BuildItem = {
     name: 'monument_middle',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 5,
+    layer: 'building',
 }
 
 export default monument_middle

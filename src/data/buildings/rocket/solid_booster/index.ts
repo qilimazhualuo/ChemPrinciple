@@ -6,8 +6,9 @@ const solid_booster: BuildItem = {
     name: 'solid_booster',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 3,
+    layer: 'building',
 }
 
 export default solid_booster

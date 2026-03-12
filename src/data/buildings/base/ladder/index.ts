@@ -8,6 +8,7 @@ const ladder: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'road',
 }
 
 export default ladder

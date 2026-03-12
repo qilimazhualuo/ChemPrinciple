@@ -5,8 +5,9 @@ const coal_generator: BuildItem = {
     name: 'coal_generator',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 3,
+    layer: 'building',
 }
 
 export default coal_generator

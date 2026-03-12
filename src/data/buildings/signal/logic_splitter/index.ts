@@ -5,8 +5,9 @@ const logic_splitter: BuildItem = {
     name: 'logic_splitter',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'automation',
 }
 
 export default logic_splitter

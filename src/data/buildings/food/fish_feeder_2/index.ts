@@ -8,6 +8,7 @@ const fish_feeder_2: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default fish_feeder_2

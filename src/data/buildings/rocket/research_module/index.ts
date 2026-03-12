@@ -5,8 +5,9 @@ const research_module: BuildItem = {
     name: 'research_module',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 4,
+    layer: 'building',
 }
 
 export default research_module

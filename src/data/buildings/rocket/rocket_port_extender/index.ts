@@ -8,6 +8,7 @@ const rocket_port_extender: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default rocket_port_extender

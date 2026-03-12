@@ -5,8 +5,9 @@ const gas_range: BuildItem = {
     name: 'gas_range',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default gas_range

@@ -6,8 +6,9 @@ const deep_fryer: BuildItem = {
     name: 'deep_fryer',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default deep_fryer

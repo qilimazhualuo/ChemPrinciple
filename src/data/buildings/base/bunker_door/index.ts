@@ -6,8 +6,9 @@ const bunker_door: BuildItem = {
     name: 'bunker_door',
     icon: '▣',
     image: image,
-    width: 1,
+    width: 4,
     height: 1,
+    layer: 'building',
 }
 
 export default bunker_door

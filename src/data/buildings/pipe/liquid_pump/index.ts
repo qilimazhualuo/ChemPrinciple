@@ -6,8 +6,9 @@ const liquid_pump: BuildItem = {
     name: 'liquid_pump',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default liquid_pump

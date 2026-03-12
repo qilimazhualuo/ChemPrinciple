@@ -6,8 +6,9 @@ const steam_turbine: BuildItem = {
     name: 'steam_turbine',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 3,
+    layer: 'building',
 }
 
 export default steam_turbine

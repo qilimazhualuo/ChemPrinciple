@@ -7,6 +7,7 @@ const planter_box_decor: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default planter_box_decor

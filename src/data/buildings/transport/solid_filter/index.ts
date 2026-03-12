@@ -6,8 +6,9 @@ const solid_filter: BuildItem = {
     name: 'solid_filter',
     icon: '▣',
     image: image,
-    width: 1,
+    width: 3,
     height: 1,
+    layer: 'building',
 }
 
 export default solid_filter

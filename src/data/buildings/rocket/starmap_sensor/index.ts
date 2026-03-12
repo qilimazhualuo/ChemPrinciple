@@ -8,6 +8,7 @@ const starmap_sensor: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default starmap_sensor

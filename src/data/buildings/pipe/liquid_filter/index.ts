@@ -5,8 +5,9 @@ const liquid_filter: BuildItem = {
     name: 'liquid_filter',
     icon: '▣',
     image: '',
-    width: 1,
+    width: 3,
     height: 1,
+    layer: 'liquid_pipe',
 }
 
 export default liquid_filter

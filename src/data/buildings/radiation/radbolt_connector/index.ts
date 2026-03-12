@@ -7,6 +7,7 @@ const radbolt_connector: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'building',
 }
 
 export default radbolt_connector

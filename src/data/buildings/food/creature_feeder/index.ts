@@ -6,8 +6,9 @@ const creature_feeder: BuildItem = {
     name: 'creature_feeder',
     icon: '▣',
     image: image,
-    width: 1,
+    width: 3,
     height: 1,
+    layer: 'building',
 }
 
 export default creature_feeder

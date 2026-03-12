@@ -5,8 +5,9 @@ const rocket_control_station: BuildItem = {
     name: 'rocket_control_station',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 4,
+    layer: 'building',
 }
 
 export default rocket_control_station

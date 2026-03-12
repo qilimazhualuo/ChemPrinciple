@@ -1,4 +1,5 @@
 import Phaser from 'phaser'
+import type { BuildingLayer } from '@/data/buildings/types'
 
 const MOVE_SPEED = 200
 const JUMP_VELOCITY = -520
@@ -12,6 +13,18 @@ interface BuildItem {
     image: string
     width: number
     height: number
+    layer: BuildingLayer
+}
+
+const LAYER_DEPTH: Record<BuildingLayer, number> = {
+    background: -2,
+    liquid_pipe: -1,
+    gas_pipe: -1,
+    wire: -1,
+    automation: -1,
+    tile: 0,
+    road: 1,
+    building: 2,
 }
 
 /**
@@ -21,6 +34,8 @@ interface BuildItem {
 export default class MainScene extends Phaser.Scene {
     private player!: Phaser.Physics.Arcade.Sprite
     private climbables!: Phaser.Physics.Arcade.StaticGroup
+    private solids!: Phaser.Physics.Arcade.StaticGroup
+    private roads!: Phaser.Physics.Arcade.StaticGroup
     private placedBuildings!: Phaser.GameObjects.Group
     private placementItem: BuildItem | null = null
     private previewRect: Phaser.GameObjects.Rectangle | null = null
@@ -68,12 +83,13 @@ export default class MainScene extends Phaser.Scene {
         this.player.setOrigin(0.5, 1)
         this.physics.add.collider(this.player, ground)
 
-        // 可攀爬物体（梯子，可碰撞，overlap 检测是否在攀爬区）
+        // 碰撞组：实体方块（tile + building）
+        this.solids = this.physics.add.staticGroup()
+        this.physics.add.collider(this.player, this.solids)
+
+        // 碰撞组：道路（梯子等，可攀爬 + 单向平台）
         this.climbables = this.physics.add.staticGroup()
-        const ladder = this.add.rectangle(width * 0.2, groundY - 120, 24, 200, 0x4a5568)
-        ladder.setOrigin(0.5, 1)
-        this.climbables.add(ladder)
-        this.physics.add.collider(this.player, this.climbables)
+        this.roads = this.physics.add.staticGroup()
 
         // 已放置建筑
         this.placedBuildings = this.add.group()
@@ -184,20 +200,51 @@ export default class MainScene extends Phaser.Scene {
         const w = item.width * TILE_SIZE
         const h = item.height * TILE_SIZE
         const textureKey = `building_${item.id}`
+        const depth = LAYER_DEPTH[item.layer]
+
+        let visual: Phaser.GameObjects.Image | Phaser.GameObjects.Rectangle
 
         if (this.textures.exists(textureKey)) {
-            const img = this.add.image(worldX, worldY, textureKey)
+            visual = this.add.image(worldX, worldY, textureKey)
                 .setDisplaySize(w, h)
-            this.placedBuildings.add(img)
+                .setDepth(depth)
         } else {
-            const rect = this.add.rectangle(worldX, worldY, w, h, 0x4a5568)
-            rect.setStrokeStyle(2, 0x63b3ed)
+            const layerColors: Record<string, { fill: number; stroke: number }> = {
+                background:  { fill: 0x2d3748, stroke: 0x718096 },
+                tile:        { fill: 0x4a5568, stroke: 0xa0aec0 },
+                liquid_pipe: { fill: 0x2b6cb0, stroke: 0x63b3ed },
+                gas_pipe:    { fill: 0x276749, stroke: 0x68d391 },
+                wire:        { fill: 0x744210, stroke: 0xecc94b },
+                automation:  { fill: 0x553c9a, stroke: 0xb794f4 },
+                road:        { fill: 0x5a3e28, stroke: 0xd69e2e },
+                building:    { fill: 0x4a5568, stroke: 0x63b3ed },
+            }
+            const colors = layerColors[item.layer] ?? layerColors.building
+            visual = this.add.rectangle(worldX, worldY, w, h, colors.fill)
+                .setStrokeStyle(2, colors.stroke)
+                .setDepth(depth)
             const label = this.add.text(worldX, worldY, item.icon, {
                 fontSize: Math.min(18, Math.floor(TILE_SIZE * 0.8)),
                 color: '#e2e8f0',
-            }).setOrigin(0.5)
-            this.placedBuildings.add(rect)
+            }).setOrigin(0.5).setDepth(depth + 0.1)
             this.placedBuildings.add(label)
+        }
+
+        this.placedBuildings.add(visual)
+
+        switch (item.layer) {
+            case 'tile':
+            case 'building': {
+                this.physics.add.existing(visual, true)
+                this.solids.add(visual)
+                break
+            }
+            case 'road': {
+                this.physics.add.existing(visual, true)
+                this.roads.add(visual)
+                this.climbables.add(visual)
+                break
+            }
         }
     }
 
@@ -228,7 +275,10 @@ export default class MainScene extends Phaser.Scene {
             if (this.keys.D?.isDown) body.setVelocityX(MOVE_SPEED)
             if (this.keys.W?.isDown) body.setVelocityY(-CLIMB_SPEED)
             else if (this.keys.S?.isDown) body.setVelocityY(CLIMB_SPEED)
-            else body.setVelocityY(0)
+            else {
+                body.setVelocityY(0)
+                body.blocked.down = true
+            }
         } else {
             body.setAllowGravity(true)
             body.setVelocityX(0)

@@ -6,8 +6,9 @@ const spice_grinder: BuildItem = {
     name: 'spice_grinder',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 2,
+    layer: 'building',
 }
 
 export default spice_grinder

@@ -5,8 +5,9 @@ const triage_cot: BuildItem = {
     name: 'triage_cot',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default triage_cot

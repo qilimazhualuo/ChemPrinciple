@@ -5,8 +5,9 @@ const doctor_station: BuildItem = {
     name: 'doctor_station',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'building',
 }
 
 export default doctor_station

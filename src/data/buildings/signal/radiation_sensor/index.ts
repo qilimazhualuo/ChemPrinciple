@@ -8,6 +8,7 @@ const radiation_sensor: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default radiation_sensor

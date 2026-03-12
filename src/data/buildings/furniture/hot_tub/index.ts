@@ -6,8 +6,9 @@ const hot_tub: BuildItem = {
     name: 'hot_tub',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 2,
+    layer: 'building',
 }
 
 export default hot_tub

@@ -8,6 +8,7 @@ const timer_sensor: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default timer_sensor

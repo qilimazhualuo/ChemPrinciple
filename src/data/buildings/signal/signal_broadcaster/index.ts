@@ -7,7 +7,8 @@ const signal_broadcaster: BuildItem = {
     icon: '▣',
     image: image,
     width: 1,
-    height: 1,
+    height: 2,
+    layer: 'automation',
 }
 
 export default signal_broadcaster

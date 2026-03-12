@@ -5,8 +5,9 @@ const canvas_wide: BuildItem = {
     name: 'canvas_wide',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 3,
+    height: 2,
+    layer: 'background',
 }
 
 export default canvas_wide

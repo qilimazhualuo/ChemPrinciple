@@ -8,6 +8,7 @@ const corner_moulding: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'background',
 }
 
 export default corner_moulding

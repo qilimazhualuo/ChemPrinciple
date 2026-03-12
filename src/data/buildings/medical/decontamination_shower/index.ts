@@ -5,8 +5,9 @@ const decontamination_shower: BuildItem = {
     name: 'decontamination_shower',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 2,
+    height: 4,
+    layer: 'building',
 }
 
 export default decontamination_shower

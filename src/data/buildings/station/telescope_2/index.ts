@@ -5,8 +5,9 @@ const telescope_2: BuildItem = {
     name: 'telescope_2',
     icon: '▣',
     image: '',
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 4,
+    layer: 'building',
 }
 
 export default telescope_2

@@ -7,6 +7,7 @@ const carpet_tile: BuildItem = {
     image: '',
     width: 1,
     height: 1,
+    layer: 'tile',
 }
 
 export default carpet_tile

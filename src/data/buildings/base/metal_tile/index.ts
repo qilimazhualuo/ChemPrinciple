@@ -8,6 +8,7 @@ const metal_tile: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'tile',
 }
 
 export default metal_tile

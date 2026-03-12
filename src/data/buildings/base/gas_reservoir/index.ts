@@ -6,8 +6,9 @@ const gas_reservoir: BuildItem = {
     name: 'gas_reservoir',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 5,
+    height: 3,
+    layer: 'building',
 }
 
 export default gas_reservoir

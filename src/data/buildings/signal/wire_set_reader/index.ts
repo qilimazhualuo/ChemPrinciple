@@ -8,6 +8,7 @@ const wire_set_reader: BuildItem = {
     image: image,
     width: 1,
     height: 1,
+    layer: 'automation',
 }
 
 export default wire_set_reader

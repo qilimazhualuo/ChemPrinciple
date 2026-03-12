@@ -6,8 +6,9 @@ const fertilizer_synthesizer: BuildItem = {
     name: 'fertilizer_synthesizer',
     icon: '▣',
     image: image,
-    width: 1,
-    height: 1,
+    width: 4,
+    height: 3,
+    layer: 'building',
 }
 
 export default fertilizer_synthesizer
