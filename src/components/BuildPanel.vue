@@ -30,6 +30,7 @@ function selectBuild(item: BuildItem) {
         setSelectedBuild?.(null)
     } else {
         setSelectedBuild?.(item)
+        openCategory.value = null  // 收起菜单，方便点击画布放置
     }
 }
 
