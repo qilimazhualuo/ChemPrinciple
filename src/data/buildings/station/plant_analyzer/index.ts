@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const plant_analyzer: BuildItem = {
     id: 'plant_analyzer',
     name: 'plant_analyzer',
+    desc: '分析植物基因和特性的设备',
     icon: '▣',
     image: '',
     width: 4,

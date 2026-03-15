@@ -4,6 +4,7 @@ import image from './glass_forge.png'
 const glass_forge: BuildItem = {
     id: 'glass_forge',
     name: 'glass_forge',
+    desc: '将沙子熔炼成玻璃的熔炉',
     icon: '▣',
     image: image,
     width: 5,

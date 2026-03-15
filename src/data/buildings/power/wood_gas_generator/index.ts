@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const wood_gas_generator: BuildItem = {
     id: 'wood_gas_generator',
     name: 'wood_gas_generator',
+    desc: '燃烧木材产生电力',
     icon: '▣',
     image: '',
     width: 2,

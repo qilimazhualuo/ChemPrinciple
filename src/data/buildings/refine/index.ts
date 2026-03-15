@@ -24,6 +24,7 @@ import sludge_separator from './sludge_separator'
 const refine: BuildCategory = {
     id: 'refine',
     name: '精炼',
+    desc: '',
     icon: '◇',
     buildings: [
         diamond_press,

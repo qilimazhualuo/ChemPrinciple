@@ -16,6 +16,7 @@ import liquid_thermoregulator from './liquid_thermoregulator'
 const utility: BuildCategory = {
     id: 'utility',
     name: '实用',
+    desc: '',
     icon: '⚙',
     buildings: [
         ice_machine,

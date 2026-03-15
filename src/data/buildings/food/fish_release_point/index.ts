@@ -4,6 +4,7 @@ import image from './fish_release_point.png'
 const fish_release_point: BuildItem = {
     id: 'fish_release_point',
     name: 'fish_release_point',
+    desc: '释放水生动物的指定位置',
     icon: '▣',
     image: image,
     width: 1,

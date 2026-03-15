@@ -4,6 +4,7 @@ import image from './air_filter.png'
 const air_filter: BuildItem = {
     id: 'air_filter',
     name: 'air_filter',
+    desc: '过滤空气中的有害气体',
     icon: '▣',
     image: image,
     width: 1,

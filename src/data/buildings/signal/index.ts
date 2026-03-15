@@ -41,6 +41,7 @@ import logic_wire_bridge from './logic_wire_bridge'
 const signal: BuildCategory = {
     id: 'signal',
     name: '信号',
+    desc: '',
     icon: '◐',
     buildings: [
         logic_hammer,

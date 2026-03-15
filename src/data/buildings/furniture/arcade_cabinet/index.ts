@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const arcade_cabinet: BuildItem = {
     id: 'arcade_cabinet',
     name: 'arcade_cabinet',
+    desc: '复制人娱乐用的街机游戏柜',
     icon: '▣',
     image: '',
     width: 3,

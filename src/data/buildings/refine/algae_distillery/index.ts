@@ -4,6 +4,7 @@ import image from './algae_distillery.png'
 const algae_distillery: BuildItem = {
     id: 'algae_distillery',
     name: 'algae_distillery',
+    desc: '将淤泥蒸馏为藻类和污水',
     icon: '▣',
     image: image,
     width: 2,

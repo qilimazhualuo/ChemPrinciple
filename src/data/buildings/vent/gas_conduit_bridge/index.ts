@@ -4,6 +4,7 @@ import image from './gas_conduit_bridge.png'
 const gas_conduit_bridge: BuildItem = {
     id: 'gas_conduit_bridge',
     name: 'gas_conduit_bridge',
+    desc: '跨越其他管道的气体管道桥',
     icon: '▣',
     image: image,
     width: 1,

@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const rocket_port_liquid_loader: BuildItem = {
     id: 'rocket_port_liquid_loader',
     name: 'rocket_port_liquid_loader',
+    desc: '将液体装载到火箭的港口',
     icon: '▣',
     image: '',
     width: 2,

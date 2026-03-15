@@ -4,6 +4,7 @@ import image from './sweepy_station.png'
 const sweepy_station: BuildItem = {
     id: 'sweepy_station',
     name: 'sweepy_station',
+    desc: '扫地机器人的充电和控制站',
     icon: '▣',
     image: image,
     width: 2,

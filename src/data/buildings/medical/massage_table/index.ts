@@ -4,6 +4,7 @@ import image from './massage_table.png'
 const massage_table: BuildItem = {
     id: 'massage_table',
     name: 'massage_table',
+    desc: '缓解复制人压力的按摩床',
     icon: '▣',
     image: image,
     width: 3,

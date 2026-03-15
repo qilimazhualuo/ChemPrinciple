@@ -4,6 +4,7 @@ import image from './insulated_liquid_conduit.png'
 const insulated_liquid_conduit: BuildItem = {
     id: 'insulated_liquid_conduit',
     name: 'insulated_liquid_conduit',
+    desc: '隔热的液体管道，减少热量传导',
     icon: '▣',
     image: image,
     width: 1,

@@ -4,6 +4,7 @@ import image from './window_tile.png'
 const window_tile: BuildItem = {
     id: 'window_tile',
     name: 'window_tile',
+    desc: '透明的玻璃砖块，允许光线通过',
     icon: '▣',
     image: image,
     width: 1,

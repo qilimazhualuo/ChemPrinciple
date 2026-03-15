@@ -4,6 +4,7 @@ import image from './auto_miner.png'
 const auto_miner: BuildItem = {
     id: 'auto_miner',
     name: 'auto_miner',
+    desc: '自动挖掘周围方块的采矿机',
     icon: '▣',
     image: image,
     width: 2,

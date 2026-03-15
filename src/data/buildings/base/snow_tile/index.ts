@@ -4,6 +4,7 @@ import image from './snow_tile.png'
 const snow_tile: BuildItem = {
     id: 'snow_tile',
     name: 'snow_tile',
+    desc: '由雪制成的临时砖块',
     icon: '▣',
     image: image,
     width: 1,

@@ -4,6 +4,7 @@ import image from './rock_crusher.png'
 const rock_crusher: BuildItem = {
     id: 'rock_crusher',
     name: 'rock_crusher',
+    desc: '将岩石粉碎成沙子和矿物',
     icon: '▣',
     image: image,
     width: 4,

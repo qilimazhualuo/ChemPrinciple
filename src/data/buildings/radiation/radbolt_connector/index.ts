@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const radbolt_connector: BuildItem = {
     id: 'radbolt_connector',
     name: 'radbolt_connector',
+    desc: '连接辐射粒子传输网络的节点',
     icon: '▣',
     image: '',
     width: 1,

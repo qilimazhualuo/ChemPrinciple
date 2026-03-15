@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const decontamination_shower: BuildItem = {
     id: 'decontamination_shower',
     name: 'decontamination_shower',
+    desc: '全身消毒淋浴设备',
     icon: '▣',
     image: '',
     width: 2,

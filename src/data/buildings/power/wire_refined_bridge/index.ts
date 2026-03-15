@@ -4,6 +4,7 @@ import image from './wire_refined_bridge.png'
 const wire_refined_bridge: BuildItem = {
     id: 'wire_refined_bridge',
     name: 'wire_refined_bridge',
+    desc: '跨越其他电线的精炼导电线桥',
     icon: '▣',
     image: image,
     width: 1,

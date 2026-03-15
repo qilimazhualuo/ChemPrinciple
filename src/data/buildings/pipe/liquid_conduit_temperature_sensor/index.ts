@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const liquid_conduit_temperature_sensor: BuildItem = {
     id: 'liquid_conduit_temperature_sensor',
     name: 'liquid_conduit_temperature_sensor',
+    desc: '检测管道中液体温度的传感器',
     icon: '▣',
     image: '',
     width: 1,

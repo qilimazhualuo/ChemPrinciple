@@ -4,6 +4,7 @@ import image from './manual_radbolt_generator.png'
 const manual_radbolt_generator: BuildItem = {
     id: 'manual_radbolt_generator',
     name: 'manual_radbolt_generator',
+    desc: '手动产生辐射粒子的发生器',
     icon: '▣',
     image: image,
     width: 2,

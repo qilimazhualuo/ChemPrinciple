@@ -35,6 +35,7 @@ import telescope_2 from './telescope_2'
 const station: BuildCategory = {
     id: 'station',
     name: '站台',
+    desc: '',
     icon: '▣',
     buildings: [
         artifact_analysis_station,

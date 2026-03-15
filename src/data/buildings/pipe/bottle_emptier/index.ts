@@ -4,6 +4,7 @@ import image from './bottle_emptier.png'
 const bottle_emptier: BuildItem = {
     id: 'bottle_emptier',
     name: 'bottle_emptier',
+    desc: '将瓶装液体倒入管道或环境中',
     icon: '▣',
     image: image,
     width: 1,

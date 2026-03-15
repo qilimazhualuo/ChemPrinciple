@@ -4,6 +4,7 @@ import image from './fish_trap.png'
 const fish_trap: BuildItem = {
     id: 'fish_trap',
     name: 'fish_trap',
+    desc: '捕捉水生动物的陷阱',
     icon: '▣',
     image: image,
     width: 1,

@@ -4,6 +4,7 @@ import image from './oxygen_diffuser.png'
 const oxygen_diffuser: BuildItem = {
     id: 'oxygen_diffuser',
     name: 'oxygen_diffuser',
+    desc: '利用藻类产生氧气扩散到周围环境',
     icon: '▣',
     image: image,
     width: 1,

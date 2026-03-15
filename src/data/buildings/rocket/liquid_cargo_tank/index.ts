@@ -4,6 +4,7 @@ import image from './liquid_cargo_tank.png'
 const liquid_cargo_tank: BuildItem = {
     id: 'liquid_cargo_tank',
     name: 'liquid_cargo_tank',
+    desc: '火箭用液体货舱',
     icon: '▣',
     image: image,
     width: 5,

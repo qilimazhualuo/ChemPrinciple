@@ -4,6 +4,7 @@ import image from './liquid_output_attachment.png'
 const liquid_output_attachment: BuildItem = {
     id: 'liquid_output_attachment',
     name: 'liquid_output_attachment',
+    desc: '火箭液体输出附件',
     icon: '▣',
     image: image,
     width: 1,

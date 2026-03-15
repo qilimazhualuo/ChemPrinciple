@@ -4,6 +4,7 @@ import image from './thermoregulator.png'
 const thermoregulator: BuildItem = {
     id: 'thermoregulator',
     name: 'thermoregulator',
+    desc: '冷却气体的热调节器',
     icon: '▣',
     image: image,
     width: 2,

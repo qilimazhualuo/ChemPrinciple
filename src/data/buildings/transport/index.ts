@@ -19,6 +19,7 @@ import conveyor_meter from './conveyor_meter'
 const transport: BuildCategory = {
     id: 'transport',
     name: '运输',
+    desc: '',
     icon: '⇄',
     buildings: [
         sweeper,

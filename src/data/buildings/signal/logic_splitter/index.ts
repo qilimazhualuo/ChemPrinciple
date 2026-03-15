@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const logic_splitter: BuildItem = {
     id: 'logic_splitter',
     name: 'logic_splitter',
+    desc: '将信号分配到多个输出的分配器',
     icon: '▣',
     image: '',
     width: 2,

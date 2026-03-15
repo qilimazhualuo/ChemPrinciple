@@ -13,6 +13,7 @@ import radbolt_connector from './radbolt_connector'
 const radiation: BuildCategory = {
     id: 'radiation',
     name: '辐射',
+    desc: '',
     icon: '☢',
     buildings: [
         particle_storage,

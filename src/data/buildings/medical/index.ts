@@ -15,6 +15,7 @@ import monument from './monument'
 const medical: BuildCategory = {
     id: 'medical',
     name: '医疗',
+    desc: '',
     icon: '✚',
     buildings: [
         hand_sanitizer,

@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const disconnect_high: BuildItem = {
     id: 'disconnect_high',
     name: 'disconnect_high',
+    desc: '用于断开高压电线连接的节点',
     icon: '▣',
     image: '',
     width: 1,

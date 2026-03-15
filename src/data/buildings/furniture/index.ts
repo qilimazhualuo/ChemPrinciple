@@ -47,6 +47,7 @@ import jukebot from './jukebot'
 const furniture: BuildCategory = {
     id: 'furniture',
     name: '家具',
+    desc: '',
     icon: '▦',
     buildings: [
         bed,

@@ -4,6 +4,7 @@ import image from './wash_sink.png'
 const wash_sink: BuildItem = {
     id: 'wash_sink',
     name: 'wash_sink',
+    desc: '复制人洗手的水槽',
     icon: '▣',
     image: image,
     width: 2,

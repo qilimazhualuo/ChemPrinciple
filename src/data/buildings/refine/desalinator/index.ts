@@ -4,6 +4,7 @@ import image from './desalinator.png'
 const desalinator: BuildItem = {
     id: 'desalinator',
     name: 'desalinator',
+    desc: '将盐水脱盐转化为纯净水',
     icon: '▣',
     image: image,
     width: 4,

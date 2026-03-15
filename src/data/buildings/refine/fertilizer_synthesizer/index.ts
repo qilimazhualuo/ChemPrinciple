@@ -4,6 +4,7 @@ import image from './fertilizer_synthesizer.png'
 const fertilizer_synthesizer: BuildItem = {
     id: 'fertilizer_synthesizer',
     name: 'fertilizer_synthesizer',
+    desc: '合成肥料用于农业生产',
     icon: '▣',
     image: image,
     width: 4,

@@ -4,6 +4,7 @@ import image from './wire_high_wattage_2.png'
 const wire_high_wattage_2: BuildItem = {
     id: 'wire_high_wattage_2',
     name: 'wire_high_wattage_2',
+    desc: '可传输超大量电力的超高压电线',
     icon: '▣',
     image: image,
     width: 1,

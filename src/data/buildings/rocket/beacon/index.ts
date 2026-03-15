@@ -4,6 +4,7 @@ import image from './beacon.png'
 const beacon: BuildItem = {
     id: 'beacon',
     name: 'beacon',
+    desc: '太空导航信标',
     icon: '▣',
     image: image,
     width: 1,

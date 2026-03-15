@@ -4,6 +4,7 @@ import image from './ladder_attachment.png'
 const ladder_attachment: BuildItem = {
     id: 'ladder_attachment',
     name: 'ladder_attachment',
+    desc: '火箭内部的梯子附件',
     icon: '▣',
     image: image,
     width: 1,

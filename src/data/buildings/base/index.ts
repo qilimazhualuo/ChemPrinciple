@@ -34,6 +34,7 @@ import transit_tube from './transit_tube'
 const base: BuildCategory = {
     id: 'base',
     name: '基地',
+    desc: '',
     icon: '◉',
     buildings: [
         wicker_door,

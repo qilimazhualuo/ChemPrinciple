@@ -4,6 +4,7 @@ import image from './outhouse.png'
 const outhouse: BuildItem = {
     id: 'outhouse',
     name: 'outhouse',
+    desc: '不需要管道的简易厕所',
     icon: '▣',
     image: image,
     width: 2,

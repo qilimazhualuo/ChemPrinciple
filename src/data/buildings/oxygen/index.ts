@@ -11,6 +11,7 @@ import air_filter from './air_filter'
 const oxygen: BuildCategory = {
     id: 'oxygen',
     name: '氧气',
+    desc: '',
     icon: '◎',
     buildings: [
         oxyfern,

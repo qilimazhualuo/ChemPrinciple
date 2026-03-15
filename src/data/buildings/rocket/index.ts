@@ -38,6 +38,7 @@ import telescope_insulated from './telescope_insulated'
 const rocket: BuildCategory = {
     id: 'rocket',
     name: '火箭',
+    desc: '',
     icon: '▲',
     buildings: [
         gas_cargo_tank,

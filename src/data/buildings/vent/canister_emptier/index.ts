@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const canister_emptier: BuildItem = {
     id: 'canister_emptier',
     name: 'canister_emptier',
+    desc: '将罐装气体释放到环境中',
     icon: '▣',
     image: '',
     width: 1,

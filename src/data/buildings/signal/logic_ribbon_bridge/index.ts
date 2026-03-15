@@ -4,6 +4,7 @@ import image from './logic_ribbon_bridge.png'
 const logic_ribbon_bridge: BuildItem = {
     id: 'logic_ribbon_bridge',
     name: 'logic_ribbon_bridge',
+    desc: '跨越其他线缆的自动化线缆组桥',
     icon: '▣',
     image: image,
     width: 1,

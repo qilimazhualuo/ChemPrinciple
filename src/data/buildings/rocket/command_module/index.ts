@@ -4,6 +4,7 @@ import image from './command_module.png'
 const command_module: BuildItem = {
     id: 'command_module',
     name: 'command_module',
+    desc: '火箭指挥舱，控制火箭飞行',
     icon: '▣',
     image: image,
     width: 5,

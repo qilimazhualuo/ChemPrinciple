@@ -24,6 +24,7 @@ import gas_conduit_meter from './gas_conduit_meter'
 const vent: BuildCategory = {
     id: 'vent',
     name: '通风',
+    desc: '',
     icon: '⇄',
     buildings: [
         rocket_port_gas_unloader,

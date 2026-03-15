@@ -4,6 +4,7 @@ import image from './manual_generator.png'
 const manual_generator: BuildItem = {
     id: 'manual_generator',
     name: 'manual_generator',
+    desc: '复制人手动跑步发电的人力发电机',
     icon: '▣',
     image: image,
     width: 4,

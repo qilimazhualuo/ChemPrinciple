@@ -4,6 +4,7 @@ import image from './signal_broadcaster.png'
 const signal_broadcaster: BuildItem = {
     id: 'signal_broadcaster',
     name: 'signal_broadcaster',
+    desc: '发送无线自动化信号的广播器',
     icon: '▣',
     image: image,
     width: 1,

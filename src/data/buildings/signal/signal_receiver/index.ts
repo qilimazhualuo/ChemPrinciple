@@ -4,6 +4,7 @@ import image from './signal_receiver.png'
 const signal_receiver: BuildItem = {
     id: 'signal_receiver',
     name: 'signal_receiver',
+    desc: '接收无线自动化信号的接收器',
     icon: '▣',
     image: image,
     width: 1,

@@ -11,6 +11,7 @@ export type BuildingLayer =
 export interface BuildItem {
     id: string
     name: string
+    desc: string
     icon: string
     image: string
     width: number

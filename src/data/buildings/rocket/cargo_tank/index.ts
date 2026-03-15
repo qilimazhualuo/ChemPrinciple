@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const cargo_tank: BuildItem = {
     id: 'cargo_tank',
     name: 'cargo_tank',
+    desc: '火箭用固体货舱',
     icon: '▣',
     image: '',
     width: 5,

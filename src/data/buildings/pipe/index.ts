@@ -30,6 +30,7 @@ import wall_toilet from './wall_toilet'
 const pipe: BuildCategory = {
     id: 'pipe',
     name: '水管',
+    desc: '',
     icon: '⊟',
     buildings: [
         rocket_port_liquid_loader,

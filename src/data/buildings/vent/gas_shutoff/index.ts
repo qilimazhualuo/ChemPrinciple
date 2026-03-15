@@ -4,6 +4,7 @@ import image from './gas_shutoff.png'
 const gas_shutoff: BuildItem = {
     id: 'gas_shutoff',
     name: 'gas_shutoff',
+    desc: '通过自动化信号控制气体通断',
     icon: '▣',
     image: image,
     width: 1,

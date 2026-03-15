@@ -4,6 +4,7 @@ import image from './explosive_station.png'
 const explosive_station: BuildItem = {
     id: 'explosive_station',
     name: 'explosive_station',
+    desc: '制造爆炸物的危险工作站',
     icon: '▣',
     image: image,
     width: 3,

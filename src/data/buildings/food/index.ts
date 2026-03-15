@@ -30,6 +30,7 @@ import refrigerator from './refrigerator'
 const food: BuildCategory = {
     id: 'food',
     name: '食物',
+    desc: '',
     icon: '☗',
     buildings: [
         gas_range,

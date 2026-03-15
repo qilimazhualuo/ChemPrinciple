@@ -3,6 +3,7 @@ import type { BuildItem } from '../../types'
 const telescope_insulated: BuildItem = {
     id: 'telescope_insulated',
     name: 'telescope_insulated',
+    desc: '隔热型太空望远镜',
     icon: '▣',
     image: '',
     width: 4,

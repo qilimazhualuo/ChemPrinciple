@@ -4,6 +4,7 @@ import image from './hydro_sensor.png'
 const hydro_sensor: BuildItem = {
     id: 'hydro_sensor',
     name: 'hydro_sensor',
+    desc: '检测环境中液体存在的传感器',
     icon: '▣',
     image: image,
     width: 1,
